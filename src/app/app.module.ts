@@ -7,7 +7,11 @@ import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
+import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {fas} from '@fortawesome/free-solid-svg-icons';
+import {far} from '@fortawesome/free-regular-svg-icons';
+import {fab} from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +20,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FontAwesomeModule,
     IonicModule.forRoot(),
   ],
   providers: [
@@ -25,4 +30,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
   bootstrap: [AppComponent],
 })
 export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, fab, far);
+  }
 }
