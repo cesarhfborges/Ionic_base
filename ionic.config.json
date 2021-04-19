@@ -1,0 +1,7 @@
+{
+  "name": "YTCar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
