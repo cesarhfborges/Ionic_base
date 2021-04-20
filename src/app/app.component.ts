@@ -15,7 +15,7 @@ export class AppComponent {
     this.initializeApp();
   }
 
-  private initializeApp() {
+  private initializeApp(): void {
     if (this.platform.is('cordova')) {
       this.statusBar.overlaysWebView(true);
       this.statusBar.backgroundColorByHexString('#9b59b6');
